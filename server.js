@@ -4,11 +4,11 @@ const { Client } = require('pg');
 const { URL, URLSearchParams } = require('url');
 
 const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'workspaces',
-  password: '7654',
-  port: 5432
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 });
 
 client.connect()
@@ -167,7 +167,9 @@ const server = http.createServer((req, res) => {
 
 });
 
+const PORT = process.env.PORT || 3000;
+
 // Start server
-server.listen(3000, 'localhost', () => {
-  console.log('~~~ Listening on http://localhost:3000/ ~~~');
+server.listen(PORT, '0.0.0.0',() => {
+  console.log(`~~~ Listening ~~~`);
 });
