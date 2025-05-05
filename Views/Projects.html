@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workspaces | Projects</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafc;
+      color: #2c3e50;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .layout-sidebar {
+      width: 220px;
+      background: #1f2937;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-right: 1px solid #333;
+    }
+
+    .layout-sidebar h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 6px 0 20px 16px;
+      border-bottom: 1px solid #374151;
+      margin: 0 0 18px 0;
+      letter-spacing: 0.5px;
+      text-decoration: underline;
+    }
+
+    .layout-sidebar-nav-link {
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .layout-sidebar-nav-link:hover {
+      background-color: #374151;
+      color: #fff;
+    }
+
+    .layout-sidebar-nav-link.active {
+      background-color: #3b82f6;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Main Area */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .layout-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .layout-page-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .layout-header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .layout-search-input {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f3f4f6;
+      font-size: 14px;
+      width: 200px;
+    }
+
+    .layout-user {
+      position: relative;
+    }
+
+    .layout-user-button {
+      background: #e5e7eb;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .layout-user-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      margin-top: 6px;
+    }
+
+    .layout-user-dropdown a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .layout-user-dropdown a:hover {
+      background-color: #f3f4f6;
+    }
+
+    .layout-user:hover .layout-user-dropdown {
+      display: block;
+    }
+
+    /* Content Area */
+    .layout-main-content {
+      flex: 1;
+      padding: 22px;
+      background-color: #f9fafb;
+    }
+
+    .main-content-placeholder {
+      font-size: 16px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout-sidebar">
+    <h1>Workspaces</h1>
+    <div class="layout-sidebar-nav-link">Home</div>
+    <div class="layout-sidebar-nav-link active">Projects</div>
+    <div class="layout-sidebar-nav-link">Notes</div>
+    <div class="layout-sidebar-nav-link">Wiki</div>
+    <div class="layout-sidebar-nav-link">Chat</div>
+  </div>
+
+  <div class="main">
+    <div class="layout-header">
+      <div class="layout-page-title">Projects</div>
+      <div class="layout-header-right">
+        <input type="text" class="layout-search-input" placeholder="Search...">
+        <div class="layout-user">
+          <button class="layout-user-button">aventura@gmail.com ▾</button>
+          <div class="layout-user-dropdown">
+            <a href="#">Settings</a>
+            <a href="#">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout-main-content">
+      <p class="main-content-placeholder">content placeholder</p>
+    </div>
+  </div>
+
+</body>
+</html>
